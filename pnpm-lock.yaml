@@ -10,20 +10,20 @@ importers:
     dependencies:
       '@astrojs/cloudflare':
         specifier: 12.5.3
-        version: 12.5.3(@types/node@22.15.17)(astro@5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3))
+        version: 12.5.3(@types/node@22.15.18)(astro@5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3))
       '@astrojs/rss':
         specifier: 4.0.11
         version: 4.0.11
       astro:
         specifier: 5.7.13
-        version: 5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3)
+        version: 5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3)
       astro-mcp:
         specifier: 0.3.2
-        version: 0.3.2(astro@5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3))(vite@6.3.5(@types/node@22.15.17))
+        version: 0.3.2(astro@5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3))(vite@6.3.5(@types/node@22.15.18))
     devDependencies:
-      '@cloudflare/workers-types':
-        specifier: 4.20250515.0
-        version: 4.20250515.0
+      '@types/node':
+        specifier: 22.15.18
+        version: 22.15.18
       prettier:
         specifier: 3.5.3
         version: 3.5.3
@@ -567,8 +567,8 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
-  '@types/node@22.15.17':
-    resolution: {integrity: sha512-wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==}
+  '@types/node@22.15.18':
+    resolution: {integrity: sha512-v1DKRfUdyW+jJhZNEI1PYy29S2YRxMV5AOO/x/SjKmW0acCIOqmbj6Haf9eHAhsPmrhlHSxEhv/1WszcLWV4cg==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -2011,14 +2011,14 @@ packages:
 
 snapshots:
 
-  '@astrojs/cloudflare@12.5.3(@types/node@22.15.17)(astro@5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3))':
+  '@astrojs/cloudflare@12.5.3(@types/node@22.15.18)(astro@5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3))':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@astrojs/underscore-redirects': 0.6.1
       '@cloudflare/workers-types': 4.20250515.0
-      astro: 5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3)
+      astro: 5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3)
       tinyglobby: 0.2.13
-      vite: 6.3.5(@types/node@22.15.17)
+      vite: 6.3.5(@types/node@22.15.18)
       wrangler: 4.15.2(@cloudflare/workers-types@4.20250515.0)
     transitivePeerDependencies:
       - '@types/node'
@@ -2437,7 +2437,7 @@ snapshots:
 
   '@types/fontkit@2.0.8':
     dependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
 
   '@types/hast@3.0.4':
     dependencies:
@@ -2453,7 +2453,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@22.15.17':
+  '@types/node@22.15.18':
     dependencies:
       undici-types: 6.21.0
 
@@ -2506,17 +2506,17 @@ snapshots:
     dependencies:
       printable-characters: 1.0.42
 
-  astro-mcp@0.3.2(astro@5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3))(vite@6.3.5(@types/node@22.15.17)):
+  astro-mcp@0.3.2(astro@5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3))(vite@6.3.5(@types/node@22.15.18)):
     dependencies:
-      astro: 5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3)
+      astro: 5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3)
       async-cache-dedupe: 2.2.0
-      vite-plugin-mcp: 0.2.2(vite@6.3.5(@types/node@22.15.17))
+      vite-plugin-mcp: 0.2.2(vite@6.3.5(@types/node@22.15.18))
       zod: 3.24.4
     transitivePeerDependencies:
       - supports-color
       - vite
 
-  astro@5.7.13(@types/node@22.15.17)(rollup@4.40.2)(typescript@5.8.3):
+  astro@5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3):
     dependencies:
       '@astrojs/compiler': 2.12.0
       '@astrojs/internal-helpers': 0.6.1
@@ -2570,8 +2570,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.16.0
       vfile: 6.0.3
-      vite: 6.3.5(@types/node@22.15.17)
-      vitefu: 1.0.6(vite@6.3.5(@types/node@22.15.17))
+      vite: 6.3.5(@types/node@22.15.18)
+      vitefu: 1.0.6(vite@6.3.5(@types/node@22.15.18))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.2
@@ -4136,18 +4136,18 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite-plugin-mcp@0.2.2(vite@6.3.5(@types/node@22.15.17)):
+  vite-plugin-mcp@0.2.2(vite@6.3.5(@types/node@22.15.18)):
     dependencies:
       '@modelcontextprotocol/sdk': 1.11.4
       ansis: 3.17.0
       debug: 4.4.0
       pathe: 2.0.3
-      vite: 6.3.5(@types/node@22.15.17)
+      vite: 6.3.5(@types/node@22.15.18)
       zod: 3.24.4
     transitivePeerDependencies:
       - supports-color
 
-  vite@6.3.5(@types/node@22.15.17):
+  vite@6.3.5(@types/node@22.15.18):
     dependencies:
       esbuild: 0.25.4
       fdir: 6.4.4(picomatch@4.0.2)
@@ -4156,12 +4156,12 @@ snapshots:
       rollup: 4.40.2
       tinyglobby: 0.2.13
     optionalDependencies:
-      '@types/node': 22.15.17
+      '@types/node': 22.15.18
       fsevents: 2.3.3
 
-  vitefu@1.0.6(vite@6.3.5(@types/node@22.15.17)):
+  vitefu@1.0.6(vite@6.3.5(@types/node@22.15.18)):
     optionalDependencies:
-      vite: 6.3.5(@types/node@22.15.17)
+      vite: 6.3.5(@types/node@22.15.18)
 
   web-namespaces@2.0.1: {}
 

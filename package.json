@@ -20,7 +20,7 @@
 		"astro-mcp": "0.3.2"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "4.20250515.0",
+		"@types/node": "22.15.18",
 		"prettier": "3.5.3",
 		"prettier-plugin-astro": "0.14.1",
 		"wrangler": "4.15.2"
