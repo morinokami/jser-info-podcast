@@ -19,6 +19,10 @@ const { episode } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>JSer.info を語りたい {episode?.data.id}</title>
+		<meta
+			name="description"
+			content={`${episode?.data.source} について語ります。`}
+		/>
 	</head>
 	<body>
 		<h1>{episode?.data.id}. {episode?.data.created} の JSer.info</h1>
