@@ -12,7 +12,6 @@ export default defineConfig({
 			enabled: true,
 		},
 	}),
-	// TODO: 本番環境の URL を設定
-	site: "https://example.com",
+	site: "https://jser-info-podcast.org",
 	integrations: [mcp({ editor: "cursor" })],
 });
