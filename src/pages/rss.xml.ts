@@ -28,14 +28,14 @@ export const GET: APIRoute = async (context) => {
 			<language>${podcast.language}</language>
 			<category>${podcast.category}</category>
 			<image>
-				<url>${path.join(String(context.site), "cover.png")}</url>
+				<url>${new URL("cover.png", String(context.site)).href}</url>
 				<title>${podcast.title}</title>
 				<link>${context.site}</link>
 			</image>
-			<atom:link href="${path.join(String(context.site), "rss.xml")}" rel="self" type="application/rss+xml"/>
+			<atom:link href="${new URL("rss.xml", String(context.site)).href}" rel="self" type="application/rss+xml"/>
 			<itunes:author>${podcast.author}</itunes:author>
 			<itunes:subtitle>${podcast.description}</itunes:subtitle>
-			<itunes:image href="${path.join(String(context.site), "cover.png")}"/>
+			<itunes:image href="${new URL("cover.png", String(context.site)).href}"/>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:owner>
 				<itunes:name>${podcast.author}</itunes:name>
@@ -46,11 +46,11 @@ export const GET: APIRoute = async (context) => {
 		items: episodes.map((episode) => {
 			const n = path.basename(episode.filePath ?? "").replace(".json", "");
 			const pubDate = new Date(`${episode.data.created}T19:00:00.000+09:00`);
-			const link = path.join(String(context.site), `episode/${n}`);
-			const audioUrl = path.join(
-				String(context.site),
+			const link = new URL(`episode/${n}`, String(context.site)).href;
+			const audioUrl = new URL(
 				`audio/${episode.data.created}.mp3`,
-			);
+				String(context.site),
+			).href;
 
 			return {
 				title: `${n}. ${episode.data.created} の JSer.info`,
