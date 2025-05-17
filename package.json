@@ -1,23 +1,28 @@
 {
+	"private": true,
 	"name": "jser-info-podcast",
 	"type": "module",
 	"version": "0.0.1",
+	"packageManager": "pnpm@10.11.0",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
+		"build:episodes": "TODO:",
 		"preview": "astro build && wrangler dev",
 		"astro": "astro",
 		"deploy": "astro build && wrangler deploy",
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "12.5.2",
-		"astro": "5.7.12"
+		"@astrojs/cloudflare": "12.5.3",
+		"@astrojs/rss": "4.0.11",
+		"astro": "5.7.13",
+		"astro-mcp": "0.3.2"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "4.20250510.0",
+		"@cloudflare/workers-types": "4.20250515.0",
 		"prettier": "3.5.3",
 		"prettier-plugin-astro": "0.14.1",
-		"wrangler": "4.14.4"
+		"wrangler": "4.15.2"
 	}
 }

@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const episodes = await getCollection("episodes");
+	return episodes.map((episode) => ({
+		params: { id: episode.id },
+		props: { episode },
+	}));
+}
+
+const { episode } = Astro.props;
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>JSer.info を語りたい {episode?.data.id}</title>
+	</head>
+	<body>
+		<h1>{episode?.data.id}. {episode?.data.created} の JSer.info</h1>
+		<p>
+			<a href={episode?.data.source} target="_blank" rel="noopener noreferrer"
+				>{episode?.data.source}</a
+			>
+			について語ります。
+		</p>
+		<figure>
+			<audio controls src={`/audio/${episode?.data.created}.mp3`}></audio>
+		</figure>
+	</body>
+</html>
