@@ -6,13 +6,12 @@ export const GET: APIRoute = async ({ params, request, locals }) => {
 	const { env } = locals.runtime;
 	const { filename } = params;
 	if (!filename) {
-		return new Response("Not found 1", { status: 404 });
+		return new Response("Not found", { status: 404 });
 	}
 
-	console.log(await env.AUDIO.list());
 	const headObj = await env.AUDIO.head(`${filename}.mp3`);
 	if (!headObj) {
-		return new Response("Not found 2", { status: 404 });
+		return new Response("Not found", { status: 404 });
 	}
 	const totalSize = headObj.size;
 
@@ -21,7 +20,7 @@ export const GET: APIRoute = async ({ params, request, locals }) => {
 		range: range.r2Range,
 	});
 	if (!obj) {
-		return new Response("Not found 3", { status: 404 });
+		return new Response("Not found", { status: 404 });
 	}
 
 	const headers = new Headers();

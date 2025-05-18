@@ -27,17 +27,17 @@ const { episode } = Astro.props;
 		/>
 	</head>
 	<body>
-		<header>
-			<h1>
+		<header class="px-4">
+			<h1 class="pt-4">
 				{episode?.data.id}. <time datetime={episode?.data.created}>
 					{episode?.data.created}
 				</time> の JSer.info
 			</h1>
 		</header>
 
-		<main>
+		<main class="px-4">
 			<section>
-				<p>
+				<p class="pt-2">
 					<a
 						href={episode?.data.source}
 						target="_blank"
@@ -47,8 +47,9 @@ const { episode } = Astro.props;
 				</p>
 			</section>
 
-			<figure>
+			<figure class="pt-2">
 				<audio
+					class="mx-auto w-full max-w-xl"
 					controls
 					src={`/audio/${episode?.data.created}.mp3`}
 					aria-label="エピソードを再生"></audio>

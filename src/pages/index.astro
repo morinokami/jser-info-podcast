@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
@@ -6,8 +8,6 @@ import ApplePodcasts from "../icons/apple.png";
 import GitHub from "../icons/github.svg";
 import RSS from "../icons/rss.svg";
 import Spotify from "../icons/spotify.png";
-
-import "../styles/global.css";
 
 const episodes = await getCollection("episodes");
 ---
@@ -25,9 +25,9 @@ const episodes = await getCollection("episodes");
 		/>
 	</head>
 	<body>
-		<header>
-			<h1>JSer.info を語りたい</h1>
-			<p>
+		<header class="px-4">
+			<h1 class="pt-4">JSer.info を語りたい</h1>
+			<p class="pt-2">
 				「JSer.info を語りたい」は、<a href="https://jser.info/">JSer.info</a> で紹介されている各情報について、<a
 					href="https://notebooklm.google/">NotebookLM</a
 				>
@@ -35,9 +35,9 @@ const episodes = await getCollection("episodes");
 			</p>
 		</header>
 
-		<nav>
-			<h2>Subscribe</h2>
-			<ul>
+		<nav class="px-4">
+			<h2 class="pt-4">Subscribe</h2>
+			<ul class="flex gap-2 pt-2">
 				<li>
 					<a href="/rss.xml">
 						<Image class="w-8" src={RSS} alt="" />
@@ -61,10 +61,10 @@ const episodes = await getCollection("episodes");
 			</ul>
 		</nav>
 
-		<main>
+		<main class="px-4">
 			<section aria-labelledby="episodes-heading">
-				<h2 id="episodes-heading">Episodes</h2>
-				<ul>
+				<h2 id="episodes-heading" class="pt-4">Episodes</h2>
+				<ul class="pt-2">
 					{
 						episodes.toReversed().map((episode) => (
 							<li>
@@ -81,11 +81,13 @@ const episodes = await getCollection("episodes");
 				</ul>
 			</section>
 
-			<h2>Feedback</h2>
-			<a href="https://github.com/morinokami/jser-info-podcast">
-				<Image class="w-8" src={GitHub} alt="" />
-				<span class="sr-only">リポジトリへのリンク</span>
-			</a>
+			<h2 class="pt-4">Feedback</h2>
+			<div class="flex pt-2">
+				<a href="https://github.com/morinokami/jser-info-podcast">
+					<Image class="w-8" src={GitHub} alt="" />
+					<span class="sr-only">リポジトリへのリンク</span>
+				</a>
+			</div>
 		</main>
 	</body>
 </html>
