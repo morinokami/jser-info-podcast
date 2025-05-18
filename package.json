@@ -8,7 +8,7 @@
 		"dev": "astro dev",
 		"build": "astro build",
 		"build:episodes": "TODO:",
-		"preview": "astro build && wrangler dev",
+		"preview": "astro build && wrangler dev --remote",
 		"astro": "astro",
 		"deploy": "astro build && wrangler deploy",
 		"cf-typegen": "wrangler types"
@@ -16,8 +16,11 @@
 	"dependencies": {
 		"@astrojs/cloudflare": "12.5.3",
 		"@astrojs/rss": "4.0.11",
+		"@tailwindcss/vite": "4.1.7",
 		"astro": "5.7.13",
-		"astro-mcp": "0.3.2"
+		"astro-mcp": "0.3.2",
+		"sharp": "0.34.1",
+		"tailwindcss": "4.1.7"
 	},
 	"devDependencies": {
 		"@types/node": "22.15.18",

@@ -1,4 +1,6 @@
 ---
+import "../../styles/global.css";
+
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -25,15 +27,36 @@ const { episode } = Astro.props;
 		/>
 	</head>
 	<body>
-		<h1>{episode?.data.id}. {episode?.data.created} の JSer.info</h1>
-		<p>
-			<a href={episode?.data.source} target="_blank" rel="noopener noreferrer"
-				>{episode?.data.source}</a
-			>
-			について語ります。
-		</p>
-		<figure>
-			<audio controls src={`/audio/${episode?.data.created}.mp3`}></audio>
-		</figure>
+		<header class="px-4">
+			<h1 class="pt-4">
+				{episode?.data.id}. <time datetime={episode?.data.created}>
+					{episode?.data.created}
+				</time> の JSer.info
+			</h1>
+		</header>
+
+		<main class="px-4">
+			<section>
+				<p class="pt-2">
+					<a
+						href={episode?.data.source}
+						target="_blank"
+						rel="noopener noreferrer">{episode?.data.source}</a
+					>
+					について語ります。
+				</p>
+			</section>
+
+			<figure class="pt-2">
+				<audio
+					class="mx-auto w-full max-w-xl"
+					controls
+					src={`/audio/${episode?.data.created}.mp3`}
+					aria-label="エピソードを再生"></audio>
+				<figcaption class="sr-only">
+					エピソード {episode?.data.id} の再生コントロール
+				</figcaption>
+			</figure>
+		</main>
 	</body>
 </html>

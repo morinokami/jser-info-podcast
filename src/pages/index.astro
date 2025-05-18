@@ -1,5 +1,13 @@
 ---
+import "../styles/global.css";
+
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+
+import ApplePodcasts from "../icons/apple.png";
+import GitHub from "../icons/github.svg";
+import RSS from "../icons/rss.svg";
+import Spotify from "../icons/spotify.png";
 
 const episodes = await getCollection("episodes");
 ---
@@ -17,17 +25,69 @@ const episodes = await getCollection("episodes");
 		/>
 	</head>
 	<body>
-		<h1>JSer.info を語りたい</h1>
-		<ul>
-			{
-				episodes.map((episode) => (
-					<li>
-						<a href={`/episode/${episode.data.id}/`}>
-							{episode.data.id}. {episode.data.created} の JSer.info
-						</a>
-					</li>
-				))
-			}
-		</ul>
+		<header class="px-4">
+			<h1 class="pt-4">JSer.info を語りたい</h1>
+			<p class="pt-2">
+				「JSer.info を語りたい」は、<a href="https://jser.info/">JSer.info</a> で紹介されている各情報について、<a
+					href="https://notebooklm.google/">NotebookLM</a
+				>
+				を用いて深堀りして語るポッドキャスト番組です。
+			</p>
+		</header>
+
+		<nav class="px-4">
+			<h2 class="pt-4">Subscribe</h2>
+			<ul class="flex gap-2 pt-2">
+				<li>
+					<a href="/rss.xml">
+						<Image class="w-8" src={RSS} alt="" />
+						<span class="sr-only">RSS フィードを購読</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://podcasts.apple.com/us/podcast/jser-info-を語りたい/id1814968651"
+					>
+						<Image class="w-8" src={ApplePodcasts} alt="" />
+						<span class="sr-only">Apple Podcasts で購読</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://open.spotify.com/show/2RvusgWsCpKrlt6UkombXH">
+						<Image class="w-8" src={Spotify} alt="" />
+						<span class="sr-only">Spotify で購読</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<main class="px-4">
+			<section aria-labelledby="episodes-heading">
+				<h2 id="episodes-heading" class="pt-4">Episodes</h2>
+				<ul class="pt-2">
+					{
+						episodes.toReversed().map((episode) => (
+							<li>
+								<a href={`/episode/${episode.data.id}/`}>
+									{episode.data.id}.{" "}
+									<time datetime={episode.data.created}>
+										{episode.data.created}
+									</time>{" "}
+									の JSer.info
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<h2 class="pt-4">Feedback</h2>
+			<div class="flex pt-2">
+				<a href="https://github.com/morinokami/jser-info-podcast">
+					<Image class="w-8" src={GitHub} alt="" />
+					<span class="sr-only">リポジトリへのリンク</span>
+				</a>
+			</div>
+		</main>
 	</body>
 </html>

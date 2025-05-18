@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+h1 {
+	@apply text-3xl font-bold;
+}
+
+h2 {
+	@apply text-2xl font-semibold;
+}
+
+a {
+	@apply text-blue-500 hover:text-blue-700;
+}
