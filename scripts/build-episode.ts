@@ -10,36 +10,40 @@ const options = {
 		type: "string",
 		short: "n",
 	},
-	input: {
+	audio: {
 		type: "string",
 		short: "i",
 	},
 } as const;
 
 const {
-	values: { number, input },
+	values: { number, audio },
 } = parseArgs({ options });
 
-if (!number || !input) {
-	throw new Error("number and input are required");
+if (!number || !audio) {
+	throw new Error("number and audio are required");
 }
 
-const audioPath = `./public/audio/${input}.mp3`;
+const created = audio.split("/").pop()?.split(".")[0];
+if (!created) {
+	throw new Error("filename is not valid");
+}
+
 // 四捨五入
 const duration = Math.round(
 	Number(
 		execSync(
-			`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 ${audioPath}`,
+			`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 ${audio}`,
 		)
 			.toString()
 			.trim(),
 	),
 );
-const size = fs.statSync(audioPath).size;
+const size = fs.statSync(audio).size;
 
 const episode = {
 	number,
-	created: input,
+	created,
 	source: "TODO:",
 	description: "TODO:",
 	audio: {
