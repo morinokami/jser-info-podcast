@@ -42,7 +42,7 @@ const duration = Math.round(
 const size = fs.statSync(audio).size;
 
 const episode = {
-	number,
+	id: Number(number),
 	created,
 	source: "TODO:",
 	description: "TODO:",
