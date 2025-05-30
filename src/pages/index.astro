@@ -66,17 +66,23 @@ const episodes = await getCollection("episodes");
 				<h2 id="episodes-heading" class="pt-4">Episodes</h2>
 				<ul class="pt-2">
 					{
-						episodes.toReversed().map((episode) => (
-							<li>
-								<a href={`/episode/${episode.data.id}/`}>
-									{episode.data.id}.{" "}
-									<time datetime={episode.data.created}>
-										{episode.data.created}
-									</time>{" "}
-									の JSer.info
-								</a>
-							</li>
-						))
+						episodes
+							.sort(
+								(a, b) =>
+									new Date(b.data.created).getTime() -
+									new Date(a.data.created).getTime()
+							)
+							.map((episode) => (
+								<li>
+									<a href={`/episode/${episode.data.id}/`}>
+										{episode.data.id}.{" "}
+										<time datetime={episode.data.created}>
+											{episode.data.created}
+										</time>{" "}
+										の JSer.info
+									</a>
+								</li>
+							))
 					}
 				</ul>
 			</section>
