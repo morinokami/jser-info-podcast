@@ -15,7 +15,7 @@
 		{
 			"binding": "AUDIO",
 			"bucket_name": "jser-info-podcast",
-			"preview_bucket_name": "jser-info-podcast-dev",
+			"preview_bucket_name": "jser-info-podcast",
 		},
 	],
 }
